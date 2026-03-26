@@ -1,0 +1,103 @@
+import { EVENTS_URL } from '../../src/scripts/config.js';
+
+const eventsContainer = document.querySelector('#events-container');
+const pageStatus = document.querySelector('#page-status');
+
+const initApp = async () => {
+  const events = await loadEvents();
+  displayEvents(events);
+};
+
+const loadEvents = async () => {
+  try {
+    const response = await fetch(EVENTS_URL);
+
+    if (!response.ok) {
+      throw new Error('Kunde inte hämta events.');
+    }
+
+    return await response.json();
+  } catch (error) {
+    showStatus(error.message);
+    console.error(error);
+    return [];
+  }
+};
+
+const displayEvents = (events) => {
+  eventsContainer.innerHTML = '';
+
+  if (events.length === 0) {
+    eventsContainer.innerHTML = '<p>Det finns inga event att visa.</p>';
+    return;
+  }
+
+  events.forEach((event) => {
+    const eventCard = createEventCard(event);
+    eventsContainer.appendChild(eventCard);
+  });
+};
+
+const createEventCard = (event) => {
+  const article = document.createElement('article');
+  article.classList.add('event-card');
+
+  const participantsHtml = createParticipantsHtml(event.participants);
+
+  article.innerHTML = `
+    <h3>${event.title}</h3>
+    <p>${event.description}</p>
+    <p><strong>Start:</strong> ${formatDate(event.start)}</p>
+    <p><strong>Slut:</strong> ${formatDate(event.end)}</p>
+    <p><strong>Adress:</strong> ${event.address}</p>
+    <p><strong>Kontakt:</strong> ${event.contact}</p>
+
+    <button type="button" class="signup-btn" data-event-id="${event.id}">
+      Anmäl dig
+    </button>
+
+    <h4>Anmälda deltagare</h4>
+    <ul class="participants-list">
+      ${participantsHtml}
+    </ul>
+  `;
+
+  return article;
+};
+
+const createParticipantsHtml = (participants = []) => {
+  if (participants.length === 0) {
+    return '<li>Inga anmälda ännu.</li>';
+  }
+
+  return participants
+    .map(
+      (participant) => `
+        <li>
+          ${participant.firstName} ${participant.lastName},
+          ${participant.gender},
+          ${participant.weight} kg,
+          ${participant.matches} matcher,
+          ${participant.club},
+          ${participant.phone}
+        </li>
+      `
+    )
+    .join('');
+};
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+
+  return date.toLocaleString('sv-SE', {
+    dateStyle: 'short',
+    timeStyle: 'short',
+  });
+};
+
+const showStatus = (message) => {
+  pageStatus.hidden = false;
+  pageStatus.textContent = message;
+};
+
+document.addEventListener('DOMContentLoaded', initApp);
