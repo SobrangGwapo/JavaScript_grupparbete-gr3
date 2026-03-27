@@ -3,9 +3,15 @@ import { EVENTS_URL } from '../../src/scripts/config.js';
 const eventsContainer = document.querySelector('#events-container');
 const pageStatus = document.querySelector('#page-status');
 
-const initApp = async () => {
+const refreshEvents = async () => {
   const events = await loadEvents();
   displayEvents(events);
+};
+
+window.addEventListener('eventCreated', refreshEvents);
+
+const initApp = async () => {
+  await refreshEvents();
 };
 
 const loadEvents = async () => {
@@ -25,14 +31,24 @@ const loadEvents = async () => {
 };
 
 const displayEvents = (events) => {
+  console.log('Alla events från API:', events);
+
+  // Filtrera kommande events (startdatum idag eller senare)
+  const upcomingEvents = events.filter(event => new Date(event.start) >= new Date().setHours(0, 0, 0, 0));
+
+  console.log('Kommande events efter filtrering:', upcomingEvents);
+
+  // Sortera efter startdatum (tidigast först)
+  upcomingEvents.sort((a, b) => new Date(a.start) - new Date(b.start));
+
   eventsContainer.innerHTML = '';
 
-  if (events.length === 0) {
-    eventsContainer.innerHTML = '<p>Det finns inga event att visa.</p>';
+  if (upcomingEvents.length === 0) {
+    eventsContainer.innerHTML = '<p>Det finns inga kommande event att visa.</p>';
     return;
   }
 
-  events.forEach((event) => {
+  upcomingEvents.forEach((event) => {
     const eventCard = createEventCard(event);
     eventsContainer.appendChild(eventCard);
   });
@@ -100,4 +116,4 @@ const showStatus = (message) => {
   pageStatus.textContent = message;
 };
 
-document.addEventListener('DOMContentLoaded', initApp);
+window.addEventListener('DOMContentLoaded', initApp);
