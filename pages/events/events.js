@@ -31,14 +31,24 @@ const loadEvents = async () => {
 };
 
 const displayEvents = (events) => {
+  console.log('Alla events från API:', events);
+
+  // Filtrera kommande events (startdatum idag eller senare)
+  const upcomingEvents = events.filter(event => new Date(event.start) >= new Date().setHours(0, 0, 0, 0));
+
+  console.log('Kommande events efter filtrering:', upcomingEvents);
+
+  // Sortera efter startdatum (tidigast först)
+  upcomingEvents.sort((a, b) => new Date(a.start) - new Date(b.start));
+
   eventsContainer.innerHTML = '';
 
-  if (events.length === 0) {
-    eventsContainer.innerHTML = '<p>Det finns inga event att visa.</p>';
+  if (upcomingEvents.length === 0) {
+    eventsContainer.innerHTML = '<p>Det finns inga kommande event att visa.</p>';
     return;
   }
 
-  events.forEach((event) => {
+  upcomingEvents.forEach((event) => {
     const eventCard = createEventCard(event);
     eventsContainer.appendChild(eventCard);
   });
