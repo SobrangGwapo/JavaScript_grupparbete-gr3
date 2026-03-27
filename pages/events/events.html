@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Skövde Boxing Club</title>
     <link rel="stylesheet" href="./events.css">
-    <script type= "module" src="./events.js" defer></script>
+    <link rel="stylesheet" href="../create-event/create.events.css">
+    <script type="module" src="./events.js" defer></script>
+    <script type="module" src="../create-event/create.events.js" defer></script>
   </head>
  
   <body>
@@ -25,6 +27,8 @@
       <h3 class="subtitle">Events</h3>
 
       <button id="manage-events-btn" type="button">Skapa/ändra Event</button>
+
+      <section id="create-event-section" hidden></section>
 
       <div id="page-status" aria-live="polite" hidden></div>
       <section id="events-container"></section>

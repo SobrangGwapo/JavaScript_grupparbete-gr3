@@ -3,9 +3,15 @@ import { EVENTS_URL } from '../../src/scripts/config.js';
 const eventsContainer = document.querySelector('#events-container');
 const pageStatus = document.querySelector('#page-status');
 
-const initApp = async () => {
+const refreshEvents = async () => {
   const events = await loadEvents();
   displayEvents(events);
+};
+
+window.addEventListener('eventCreated', refreshEvents);
+
+const initApp = async () => {
+  await refreshEvents();
 };
 
 const loadEvents = async () => {
@@ -100,4 +106,4 @@ const showStatus = (message) => {
   pageStatus.textContent = message;
 };
 
-document.addEventListener('DOMContentLoaded', initApp);
+window.addEventListener('DOMContentLoaded', initApp);
