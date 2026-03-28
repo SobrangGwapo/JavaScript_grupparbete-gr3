@@ -1,45 +1,45 @@
 {
   "events": [
     {
-      "id": 1,
-      "title": "Söndags-Sparring",
-      "description": "Öppen sparring för klubbens boxare.",
-      "start": "2026-05-12T12:00",
-      "end": "2026-05-12T15:00",
-      "address": "Vasagatan 30, Skövde",
-      "contact": "Ricky Svensson, 070-123 4567",
+      "title": "help",
+      "description": "laddar",
+      "start": "2026-03-29T19:20",
+      "end": "2026-03-30T19:20",
+      "address": "kanskevägen",
+      "contact": "01000223341",
       "participants": [
         {
-          "id": 1,
+          "firstName": "Freddy",
+          "lastName": "Källefjord",
           "gender": "M",
-          "weight": 67,
-          "matches": 12,
-          "firstName": "Viktor",
-          "lastName": "Karlsson",
-          "club": "Skövde Boxing Club",
-          "phone": "070-111 2223"
-        },
-        {
-          "id": 2,
-          "gender": "W",
-          "weight": 55,
-          "matches": 8,
-          "firstName": "Emma",
-          "lastName": "Larsson",
-          "club": "Skövde Boxing Club",
-          "phone": "070-556 1234"
+          "weight": "70",
+          "matches": "10",
+          "club": "Skövde BC",
+          "phone": "020520558656"
         }
-      ]
+      ],
+      "id": "YTnVYLf60Bw"
     },
     {
-      "title": "qq",
-      "description": "qq",
-      "start": "2026-03-27T11:49",
-      "end": "2026-03-28T11:49",
-      "address": "qq",
-      "contact": "qq",
-      "participants": [],
-      "id": 2
+      "title": "Hemma klubbens sm",
+      "description": "Klubbens interna träning",
+      "start": "2026-03-29T14:37",
+      "end": "2026-03-30T14:37",
+      "address": "kanskevägen",
+      "contact": "01000223341",
+      "id": "e4gOXbp",
+      "participants": [
+        {
+          "firstName": "Bengt",
+          "lastName": "Hafstrom",
+          "gender": "m",
+          "weight": "76",
+          "matches": "6",
+          "club": "uddevalla BC",
+          "phone": "0731828524"
+        }
+      ]
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

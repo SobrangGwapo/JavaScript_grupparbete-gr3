@@ -1,0 +1,291 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  background-color: #f3f4f6;
+  color: #222;
+  line-height: 1.6;
+  padding-bottom: 4rem;
+}
+
+/* HEADER – 3 kolumner */
+.header-grid {
+  background-color: #b91111;
+  color: white;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* tre lika breda kolumner */
+  align-items: center;
+}
+
+/* Vänster kolumn – logga */
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Mitten kolumn – rubrik */
+.header-center {
+  display: flex;
+  flex-direction: column; /* stapla vertikalt */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* lite luft mellan rubrik och knapp */
+}
+
+/* Höger kolumn – knapp */
+.header-right {
+  display: flex;
+  justify-content: center; /* centrerad knapp */
+  align-items: center;
+}
+
+.app-logo {
+  height: 80px; /* gör loggan lika hög som headern */
+  width: auto;
+}
+
+.header-center h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+#manage-events-btn {
+  background-color: #c62828;
+  color: white;
+  border: 2px solid #111;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+#manage-events-btn:hover {
+  background-color: #a61d1d;
+}
+
+/* CREATE EVENT SECTION */
+#create-event-section {
+  margin: 1.5rem auto;
+  padding: 1.4rem;
+  max-width: 640px;
+  background-color: #ffffffee;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#create-event-section form {
+  display: grid;
+  gap: 1rem;
+}
+
+#create-event-section label {
+  font-weight: 600;
+  color: #37474f;
+}
+
+#create-event-section input,
+#create-event-section textarea {
+  width: 100%;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  background: #f9fbff;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+#create-event-section textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#create-event-section button[type="submit"] {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+#create-event-section button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* EVENT WRAPPER */
+.event-wrapper {
+  margin-bottom: 2rem;
+}
+
+/* EVENT CARD */
+.event-card {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ICONS */
+.material-symbols-outlined {
+  font-size: 22px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ICON BUTTONS */
+.edit-event-btn,
+.edit-participant-btn {
+  color: #1976d2;
+  background: none;
+  border: none;
+  padding: 4px;
+  transition: 0.15s ease;
+}
+
+.delete-event-btn,
+.delete-participant-btn {
+  color: #d32f2f;
+  background: none;
+  border: none;
+  padding: 4px;
+  transition: 0.15s ease;
+}
+
+.edit-event-btn:hover,
+.edit-participant-btn:hover {
+  color: #0d47a1;
+  transform: scale(1.15);
+}
+
+.delete-event-btn:hover,
+.delete-participant-btn:hover {
+  color: #9a0007;
+  transform: scale(1.15);
+}
+
+/* EVENT HEADER */
+.event-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+/* PARTICIPANTS */
+.participant-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid #eceff1;
+}
+
+.participant-row:last-child {
+  border-bottom: none;
+}
+
+.participant-text {
+  flex: 1;
+  margin: 0 10px;
+  font-size: 0.95rem;
+}
+
+/* REGISTER SECTION */
+.register-section {
+    max-width: 640px;
+  margin: 1rem auto;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  background: #ffffffee;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.register-section form {
+  display: grid;
+  gap: 1rem;
+}
+
+.register-section label {
+  font-weight: 600;
+  color: #37474f;
+}
+
+.register-section input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  background: #f9fbff;
+  font-size: 0.95rem;
+}
+.register-section button[type="submit"] {
+  background-color: #0077cc; /* ändra färg här */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+.register-section button[type="submit"]:hover {
+  background-color: #005fa3; /* hover-färg */
+}
+
+.signup-btn {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #005fa3;
+}
+
+.header-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.app-logo {
+  height: 60px;
+  width: auto;
+}

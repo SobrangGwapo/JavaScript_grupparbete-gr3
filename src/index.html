@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventplanering – Grupparbete</title>
+
+  <!-- Google Material Icons (små, snygga ikoner) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+<header class="header-grid">
+  <div class="header-left">
+    <img src="../assets/logo.skovde-bc.jpg" alt="Skövde BC" class="app-logo">
+  </div>
+
+  <div class="header-center">
+    <h1>Eventplanering</h1>
+    <button id="manage-events-btn">Skapa Event</button></div>
+
+  </div>
+
+  <div class="header-right">
+    
+  </div>
+</header>
+
+  <main>
+
+    <!-- Sektion för att skapa/redigera event -->
+    <section id="create-event-section" hidden></section>
+
+    <!-- Statusmeddelanden -->
+    <p id="page-status" hidden></p>
+
+    <!-- Lista med alla events -->
+    <section id="events-container"></section>
+
+  </main>
+
+  <!-- Starta hela appen -->
+  <script type="module" src="./scripts/events/index.js"></script>
+
+</body>
+</html>
