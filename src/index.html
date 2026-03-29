@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventplanering – Grupparbete</title>
 
+  <!-- Google Fonts: Oswald -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
   <!-- Google Material Icons (små, snygga ikoner) -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
@@ -14,37 +17,36 @@
 
 <body>
 
-<header class="header-grid">
-  <div class="header-left">
-    <img src="../assets/logo.skovde-bc.jpg" alt="Skövde BC" class="app-logo">
-  </div>
-
-  <div class="header-center">
-    <h1>Eventplanering</h1>
-    <button id="manage-events-btn">Skapa Event</button></div>
-
-  </div>
-
-  <div class="header-right">
-    
+<header class="header">
+  <div class="logo">
+    <img src="../assets/logo.skovde-bc.jpg" alt="Skövde BC">
+    <h1>SKÖVDE BOXING CLUB</h1>
   </div>
 </header>
 
-  <main>
+<main class="main">
+  <h1 class="title">EVENTPLANERING</h1>
+  <p class="subtitle">Hantera dina boxningsevenemang</p>
 
-    <!-- Sektion för att skapa/redigera event -->
-    <section id="create-event-section" hidden></section>
+  <button id="manage-events-btn">Skapa Event</button>
 
-    <!-- Statusmeddelanden -->
-    <p id="page-status" hidden></p>
+  <!-- Sektion för att skapa/redigera event -->
+  <section id="create-event-section" hidden></section>
 
-    <!-- Lista med alla events -->
-    <section id="events-container"></section>
+  <!-- Statusmeddelanden -->
+  <p id="page-status" hidden></p>
 
-  </main>
+  <!-- Lista med alla events -->
+  <section id="events-container"></section>
 
-  <!-- Starta hela appen -->
-  <script type="module" src="./scripts/events/index.js"></script>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Skövde Boxing Club. Alla rättigheter förbehållna.</p>
+</footer>
+
+<!-- Starta hela appen -->
+<script type="module" src="./scripts/events/index.js"></script>
 
 </body>
 </html>

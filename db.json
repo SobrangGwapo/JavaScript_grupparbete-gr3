@@ -1,26 +1,6 @@
 {
   "events": [
     {
-      "title": "help",
-      "description": "laddar",
-      "start": "2026-03-29T19:20",
-      "end": "2026-03-30T19:20",
-      "address": "kanskevägen",
-      "contact": "01000223341",
-      "participants": [
-        {
-          "firstName": "Freddy",
-          "lastName": "Källefjord",
-          "gender": "M",
-          "weight": "70",
-          "matches": "10",
-          "club": "Skövde BC",
-          "phone": "020520558656"
-        }
-      ],
-      "id": "YTnVYLf60Bw"
-    },
-    {
       "title": "Hemma klubbens sm",
       "description": "Klubbens interna träning",
       "start": "2026-03-29T14:37",
