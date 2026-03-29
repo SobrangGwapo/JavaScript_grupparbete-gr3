@@ -38,25 +38,39 @@ JavaScript_grupparbete-gr3/
 │   ├── background.png
 │   └── logo.skovde-bc.jpg
 │
-├── pages/
-│   ├── events/
-│   │   ├── events.html
-│   │   ├── events.css
-│   │   └── events.js
-│   ├── create-event/
-│   │   ├── create.events.html
-│   │   ├── create.events.css
-│   │   └── create.events.js
-│   └── register-person/
-│       └── register.js
-│
 ├── src/
-│   └── scripts/
-│       └── config.js
+│   ├── scripts/
+│   │   ├── create-event/
+│   │   │   └── create.events.js
+│   │   │
+│   │   ├── events/
+│   │   │   ├── eventAction.js
+│   │   │   ├── index.js
+│   │   │   ├── loadEvents.js
+│   │   │   ├── participantActions.js
+│   │   │   ├── renderEventWrapper.js
+│   │   │   └── renderEvents.js
+│   │   │
+│   │   └── register-person/
+│   │       └── register.js
+│   │
+│   ├── config.js
+│   │
+│   ├── styles/
+│   │   └── style.css
+│   │
+│   ├── tests/
+│   │   ├── loadEvents.test.js
+│   │   └── setupTests.js
+│   │
+│   └── index.html
 │
+├── .gitignore
+├── README.md
 ├── db.json
+├── package-lock.json
 ├── package.json
-└── README.md
+└── vitest.config.js
 ```
 
 # Layout och funktioner
@@ -99,6 +113,20 @@ All datahämtning använder `async/await` tillsammans med `try/catch`. Vid fel v
 
 ISO-formatet gör det möjligt att formatera datum till ett läsbart svenskt format med `toLocaleString()`.
 
+# Testning
+
+Applikationen testas med hjälp av testramverket **Vitest**. 
+Tester har implementerats innan funktionerna utvecklades för 
+att säkerställa att varje funktion uppfyller kraven.
+
+### Vad testas?
+
+- **loadEvents()** – Funktionen testas för att säkerställa att data 
+  hämtas korrekt från API och att svaret returneras i förväntat format.
+
+- **Mockning av fetch()** – Används för att simulera externa 
+  beroenden och API-beteende.
+
 # Tillgänglighet
 
 Webbplatsen är utformad så att den är responsiv och tillgänglig för olika användare.
@@ -109,20 +137,6 @@ Webbplatsen är utformad så att den är responsiv och tillgänglig för olika a
 * Automatisk lagring och hämtning av data sker via ett REST API utan att sidan behöver laddas om.
 
 ![Lighthouse – Accessibility](assets/skärmdumpar/lighthouse-accessibility.png)
-
-# Validering 
-
-* **W3C-validerad HTML**
-
-![W3C HTML Validation](assets/skärmdumpar/html-validation.png)
-
-* **W3C-validerad CSS**
-
-![W3C CSS Validation](assets/skärmdumpar/css-validation.png)
-
-# Testning
-
-
 
 # Tillsammans bygger vi framtidens boxning
 
